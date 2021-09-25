@@ -8,6 +8,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
  ![metricbeat-playbook.yml](metricbeat-playbook.yml)
 ![Filebeat-playbook.yml](Filebeat-playbook.yml)
+
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
