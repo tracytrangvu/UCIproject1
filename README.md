@@ -25,46 +25,52 @@ Load balancing ensures that the application will be highly accessible/redundant/
 -What aspect of security do load balancers protect? What is the advantage of a jump box? Load balancers protects the system from DDos attacks by shifting attack traffic. The advantage of a jump box is to give access to the user from a single node that can be secured and monitored.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- What does Filebeat watch for? Filebeat is lighweight shipper for forwarding and centralizing log data and monitors the log files or locations that you specify.
+- _TODO: What does Metricbeat record? Metricbeat records the metrics and statistics from the operation system and from services running on the server.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function | IP Address    | Operating System |
+|----------|----------|---------------|------------------|
+| Jump Box | Gateway  | 172.31.5.179  | Linux/Ubuntu     |
+| Web1     | Server   | 172.31.39.169 | Linux/Ubuntu     |
+| Web2     | Server   | 172.31.12.230 | Linux/Ubuntu     |
+| Web3     | Server   | 172.31.26.135 | Linux/Ubuntu     |
+| ELK      | Server   | 172.31.9.167  | Linux/Ubuntu     |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 3.128.95.201
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by Jumpbox.
+- Which machine did you allow to access your ELK VM? Jumpbox What was its IP address? 172.31.5.179 
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 172.31.5.179         |
+| VM1      | No                  | 172.31.5.179         |
+| VM2      | No                  | 172.31.5.179         |
+| VM3      | No                  | 172.31.5.179         |
+|ELK Server| No                  | 172.31.5.179         |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- What is the main advantage of automating configuration with Ansible? The advantage is that you can put commands into multiple servers from a single playbook
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- Install: docker.io
+- Install: python3-pip
+- Install: docker
+- Command: sysctl -w vm.max_map_count=262144
+- Launch docker container: ELK
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -72,13 +78,16 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- List the IP addresses of the machines you are monitoring
+- 172.31.39.162
+- 172.31.12.230
+- 172.31.26.135
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Specify which Beats you successfully installed in Web1, Web2 and Web3
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
