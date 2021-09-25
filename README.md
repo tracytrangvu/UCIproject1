@@ -89,7 +89,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the elk_install.ymlfile to /etc/ansible.
 - Update the hosts file to include...
-- ![TODO: Update the path with the name of your diagram](webservers_picture.png)
+- ![TODO: Update the path with the name of your diagram](webservers_picture.jpg)
 - ![TODO: Update the path with the name of your diagram](elk_picture.png)
 
 - Run the playbook, and navigate to http://3.142.35.241:5601/app/kibana#/home to check that the installation worked as expected.
