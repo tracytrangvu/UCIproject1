@@ -46,7 +46,7 @@ Only the Jumpbox machine can accept connections from the Internet. Access to thi
 - 3.128.95.201
 
 Machines within the network can only be accessed by each other
--  Web1, web2 and web3 send traffic to the ELK Server 
+-  Web1, Web2 and Web3 send traffic to the ELK Server 
 
 A summary of the access policies in place can be found in the table below.
 
