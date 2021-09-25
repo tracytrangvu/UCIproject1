@@ -92,16 +92,16 @@ SSH into the control node and follow the steps below:
 - ![TODO: Update the path with the name of your diagram](webservers_picture.png)
 - ![TODO: Update the path with the name of your diagram](elk_picture.png)
 
-- Run the playbook, and navigate to http://[your_elk_server_ip]:5601/app/kibana to check that the installation worked as expected.
+- Run the playbook, and navigate to http://3.142.35.241:5601/app/kibana#/home to check that the installation worked as expected.
 
 _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it? /etc/ansible/filebeat-playbook.yml
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 - _Which URL do you navigate to in order to check that the ELK server is running?
-http://[your_elk_server_ip]:5601/app/kibana
+http://3.142.35.241:5601/app/kibana#/home
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc
 - cd /etc/ansible
 - nano elk-install.yml
 - run the playbook: ansible-playbook -i hosts apache-playbook.yml
-- check http://[your_elk_server_ip]:5601/app/kibana
+- check http://3.142.35.241:5601/app/kibana#/home
 
