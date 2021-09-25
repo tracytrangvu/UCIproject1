@@ -22,7 +22,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly accessible/redundant/reliable, in addition to restricting access to the network.
--What aspect of security do load balancers protect? What is the advantage of a jump box? Load balancers protects the system from DDos attacks by shifting attack traffic. The advantage of a jump box is to give access to the user from a single node that can be secured and monitored.
+-Load balancers protects the system from DDos attacks by shifting attack traffic. The advantage of a jump box is to give access to the user from a single node that can be secured and monitored.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - What does Filebeat watch for? Filebeat is lighweight shipper for forwarding and centralizing log data and monitors the log files or locations that you specify.
@@ -33,11 +33,11 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address    | Operating System |
 |----------|----------|---------------|------------------|
-| Jump Box | Gateway  | 172.31.5.179  | Linux/Ubuntu     |
-| Web1     | Server   | 172.31.39.169 | Linux/Ubuntu     |
-| Web2     | Server   | 172.31.12.230 | Linux/Ubuntu     |
-| Web3     | Server   | 172.31.26.135 | Linux/Ubuntu     |
-| ELK      | Server   | 172.31.9.167  | Linux/Ubuntu     |
+| Jump Box | Gateway  | 172.31.5.179  | Linux    |
+| Web1     | Server   | 172.31.39.169 | Linux    |
+| Web2     | Server   | 172.31.12.230 | Linux    |
+| Web3     | Server   | 172.31.26.135 | Linux    |
+| ELK      | Server   | 172.31.9.167  | Linux    |
 
 ### Access Policies
 
@@ -46,18 +46,18 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - 3.128.95.201
 
-Machines within the network can only be accessed by Jumpbox.
-- Which machine did you allow to access your ELK VM? Jumpbox What was its IP address? 172.31.5.179 
+Machines within the network can only be accessed by each other
+-  Web1, web2 and web3 send traffic to the ELK Server 
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | 172.31.5.179         |
-| VM1      | No                  | 172.31.5.179         |
-| VM2      | No                  | 172.31.5.179         |
-| VM3      | No                  | 172.31.5.179         |
-|ELK Server| No                  | 172.31.5.179         |
+| Web1     | No                  | 172.31.5.179         |
+| Web2     | No                  | 172.31.5.179         |
+| Web3     | No                  | 172.31.5.179         |
+|ELK Server| Yes                 | 172.31.5.179         |
 
 ### Elk Configuration
 
