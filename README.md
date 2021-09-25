@@ -60,16 +60,14 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- What is the main advantage of automating configuration with Ansible? The advantage is that you can put commands into multiple servers from a single playbook
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using the configuration can be repeated automatically as new machines are added. Also if updates need to be made the changes can take place in one file and then run to update the individual machines
 
 The playbook implements the following tasks:
-- The steps of the ELK installation
 - Install: docker.io
 - Install: python3-pip
-- Install: docker
-- Command: sysctl -w vm.max_map_count=262144
-- Launch docker container: ELK
+- Install: docker python module
+- Download and launch docker container: ELK
+- Enable docker service
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -77,16 +75,13 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- List the IP addresses of the machines you are monitoring
 - 172.31.39.162
 - 172.31.12.230
 - 172.31.26.135
 
-We have installed the following Beats on these machines:
-- Specify which Beats you successfully installed in Web1, Web2 and Web3
-
-These Beats allow us to collect the following information from each machine:
-- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+We have installed the following Beats on these machines: Web1, Web2 and Web3
+- Filebeat- Detects changes to the filesystem. Collects Apache logs
+- Metricbeat- Detects changes in filesystem metrics such as CPU usage SSH login attempts, failed sudo escalations and CPU/RAM statistics
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -94,6 +89,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the elk_install.ymlfile to /etc/ansible.
 - Update the hosts file to include...
+- ![TODO: Update the path with the name of your diagram](webservers_picture.png)
 - ![TODO: Update the path with the name of your diagram](elk_picture.png)
 
 - Run the playbook, and navigate to http://[your_elk_server_ip]:5601/app/kibana to check that the installation worked as expected.
