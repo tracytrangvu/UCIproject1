@@ -87,21 +87,11 @@ We have installed the following Beats on these machines: Web1, Web2 and Web3
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the elk_install.ymlfile to /etc/ansible.
-- Update the hosts file to include...
+- Update the hosts file within /etc/ansible and include the IPs of the Webservers
 - ![TODO: Update the path with the name of your diagram](webservers_picture.GIF)
 - ![TODO: Update the path with the name of your diagram](elk_picture.png)
 
+- Copy the playbook files to /etc/ansible. For example: /etc/ansible/filebeat-playbook.yml
+- Update the configuration files for each beat to include the ELK server host information
+- Copy the configuration files to /etc/ansible. For example: /etc/ansible/filebeat.yml
 - Run the playbook, and navigate to http://3.142.35.241:5601/app/kibana#/home to check that the installation worked as expected.
-
-_Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it? /etc/ansible/filebeat-playbook.yml
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-- _Which URL do you navigate to in order to check that the ELK server is running?
-http://3.142.35.241:5601/app/kibana#/home
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc
-- cd /etc/ansible
-- nano elk-install.yml
-- run the playbook: ansible-playbook -i hosts apache-playbook.yml
-- check http://3.142.35.241:5601/app/kibana#/home
-
