@@ -81,7 +81,7 @@ The playbook implements the following tasks:
 - Download and launch docker container: ELK
 ![attach_image](download_n_launch_ELK.PNG)
 - Published ports 5044, 5601 and 9200 were made available
-![attach_image](
+![attach_image](public_ports.PNG)
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 !![TODO: Update the path with the name of your diagram](dockerps.png)
