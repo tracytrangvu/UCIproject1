@@ -33,13 +33,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name     | Function | IP Address    | Operating System |
-|----------|----------|---------------|------------------|
-| Jump Box | Gateway  | 172.31.5.179  | Linux            |
-| Web1     | Server   | 172.31.39.169 | Linux            |
-| Web2     | Server   | 172.31.12.230 | Linux            |
-| Web3     | Server   | 172.31.26.135 | Linux            |
-| ELK      | Server   | 172.31.9.167  | Linux (Ubuntu)   |
+| Name     | Function | IP Address    | Operating System               |
+|----------|----------|---------------|----------------------------    |
+| Jump Box | Gateway  | 172.31.5.179  | Linux/UNIX                     |
+| Web1     | Server   | 172.31.39.169 | Linux/UNIX                     |
+| Web2     | Server   | 172.31.12.230 | Linux/UNIX                     |
+| Web3     | Server   | 172.31.26.135 | Linux/UNIX                     |
+| ELK      | Server   | 172.31.9.167  | Linux (Ubuntu version 20.04)   |
 
 ### Access Policies
 
@@ -67,6 +67,12 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Install: docker.io
+---
+  - name: install elk
+    hosts: elk
+    remote_user: ubuntu
+    become: true
+    tasks:
 - Install: python3-pip
 - Install: docker python module
 - Download and launch docker container: ELK
