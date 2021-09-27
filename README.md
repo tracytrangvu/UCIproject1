@@ -67,21 +67,21 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Specify different group of machines
-!![attach image](specify_config.PNG)
+![attach image](specify_config.PNG)
 - Install: docker.io
-!![attach_image](install_docker.PNG)
+![attach_image](install_docker.PNG)
 
 - Install: python3-pip
 ![attach_image](install_pip.PNG)
 ![attach_image]
 - Install: docker python module
-!![attach_image](install_docker.PNG)
+![attach_image](install_docker.PNG)
 - Increase Virtual Memory
-!![attach_image](increase_memory.PNG)
+![attach_image](increase_memory.PNG)
 - Download and launch docker container: ELK
-!![attach_image](download_n_launch_ELK.PNG)
+![attach_image](download_n_launch_ELK.PNG)
 - Published ports 5044, 5601 and 9200 were made available
-!![attach_image](
+![attach_image](
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 !![TODO: Update the path with the name of your diagram](dockerps.png)
