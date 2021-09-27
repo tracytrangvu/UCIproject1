@@ -73,7 +73,7 @@ The playbook implements the following tasks:
 
 - Install: python3-pip
 ![attach_image](install_pip.PNG)
-![attach_image]
+
 - Install: docker python module
 ![attach_image](install_docker.PNG)
 - Increase Virtual Memory
