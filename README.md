@@ -67,12 +67,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Install: docker.io
----
-  - name: install elk
-    hosts: elk
-    remote_user: ubuntu
-    become: true
-    tasks:
+
 - Install: python3-pip
 - Install: docker python module
 - Download and launch docker container: ELK
