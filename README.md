@@ -70,7 +70,7 @@ The playbook implements the following tasks:
 ![attach image](specify_config.PNG)
 - Install: docker.io
 ![attach_image](install_docker.PNG)
-
+!
 - Install: python3-pip
 ![attach_image](install_pip.PNG)
 - Install: docker python module
