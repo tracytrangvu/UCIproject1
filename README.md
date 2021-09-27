@@ -68,6 +68,8 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 - Specify different group of machines
 -![attach image](specify_config.PNG)
+
+
 - Install: docker.io
 -![attach_image](install_docker.PNG)
 
@@ -76,10 +78,13 @@ The playbook implements the following tasks:
 
 - Install: docker python module
 -![attach_image](install_docker.PNG)
+
 - Increase Virtual Memory
 -![attach_image](increase_memory.PNG)
+
 - Download and launch docker container: ELK
 -![attach_image](download_n_launch_ELK.PNG)
+
 - Published ports 5044, 5601 and 9200 were made available
 -![attach_image](public_ports.PNG)
 
