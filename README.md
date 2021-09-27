@@ -9,6 +9,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - [filebeat-playbook.yml](filebeat-playbook.yml)
 - [Elk install](elk-install.yml)
 - [MetricBeat](metricbeat-playbook.yml)
+- [hosts](hosts_jumpbox.GIF)
 
 This document contains the following details:
 - Description of the Topologu
