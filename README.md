@@ -55,11 +55,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 172.31.5.179         |
+| Jump Box | Yes                 | X.X.X.X              |
 | Web1     | No                  | 172.31.5.179         |
 | Web2     | No                  | 172.31.5.179         |
 | Web3     | No                  | 172.31.5.179         |
-|ELK Server| Yes                 | 172.31.5.179         |
+|ELK Server| Yes                 | x.x.x.x/172.31.5.179 |
 
 ### Elk Configuration
 
